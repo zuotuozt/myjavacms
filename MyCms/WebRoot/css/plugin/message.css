@@ -1,0 +1,12 @@
+@import url(header.css);
+@import url(footer.css);
+.gbook_answer{color:rgb(0,153,0);font-weight:bold;}
+#gbook_content{width:780px;background-color:rgb(245,244,255);}
+.gbook_msg_list{margin:0px auto 10px;border:1px solid rgb(188,153,0);width:98%;text-align:left;background-color:#F1FCFA;}
+.msg_bar{margin:8px;height:26px;line-height:26px;border-bottom-color:rgb(204,204,204);border-bottom-width:1px;border-bottom-style:solid;}
+.gbook_usrname{font-weight:bold;float:left;}
+.msg_time{float:right;}
+.msg_content{padding:0px 10px;line-height:1.6em;}
+.reply_content{margin:5px;padding:10px;border:1px solid rgb(204,204,204);line-height:1.6em;background-color:rgb(245,244,250);}
+.msg_page{height:26px;line-height:26px;}
+#gbook_form{text-align:left;}

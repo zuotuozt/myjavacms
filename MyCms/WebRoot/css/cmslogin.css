@@ -1,0 +1,268 @@
+@charset "utf-8";
+/* CSS Document */
+html{
+	text-align: center;
+}
+body{
+	width:800px;
+	margin:0 auto;
+	text-align:center;
+	font-size:14px;
+	font-family: "Trebuchet MS","Lucida Console","Lucida Sans","sans-serif";
+}
+#signInBody{
+	height:auto;
+	margin:auto;
+	background-position:top;
+	border-right-width:6px;
+	border-left-width:6px;
+	border-right-style:solid;
+	border-left-style:solid;
+	border-right-color:#297fbc;
+	border-left-color:#297fbc;
+	width:788px;
+	display:inline-block;
+	text-align:left;
+}
+a:link{ color:#333333;text-decoration:none;}
+a:visited{color:#333333;text-decoration:none;}
+a:active{color:#333333;text-decoration:none;}
+a:hover{color:#333333;text-decoration:underline;}
+#titles{
+	background-image:url(../img/cmslogin_01.jpg);
+	background-repeat:no-repeat;
+	background-position:center top;
+	width:800px;
+	height:75px;
+	display:block;
+}
+#titleimage{
+	background-image:url(../img/cmslogin_05.jpg);
+	background-repeat:no-repeat;
+	background-position:left top;
+	width:788px;
+	height:23px;
+	display:inline-block;
+	margin:0px;
+}
+.logininfo{
+	background-image:url(../img/showfiletype.jpg);
+	background-repeat:no-repeat;
+	background-position:left top;
+	width:784px;
+	height:151px;
+	display:block;
+	font-family:"宋体";
+	font-size:30px;
+	color:#2881bd;
+	padding-top:10px;
+	text-align:right;	
+}
+.info{
+	text-align:left;
+	width:300px;
+	height:230px;
+	margin:0px;
+	vertical-align:top;
+	border-top-width:1px;
+	border-top-style:solid;
+	border-top-color:#c1dcfa;
+	margin-left:20px;
+	display:inline-block;
+	padding-bottom:20px;
+}
+.infolistimage{
+	text-align:left;
+	background-position:center center;
+	position:relative;
+	top:0px;
+	display:block;
+	height:60px;
+	width:auto;
+}
+#infolistimagea{
+	background-image:url(../img/web.jpg);
+	background-repeat:no-repeat;
+	background-position:left top;
+}
+#infolistimageb{
+	background-image:url(../img/lock.jpg);
+	background-repeat:no-repeat;
+	background-position:left top;
+}
+#infolistimagec{
+	background-image:url(../img/pfile.jpg);
+	background-repeat:no-repeat;
+	background-position:left top;
+}
+#infolistimaged{
+	background-image:url(../img/word.jpg);
+	background-repeat:no-repeat;
+	background-position:left top;
+}
+.infolistimage a{
+	font-size:12px;
+	font-family:"Trebuchet MS","Lucida Console","Lucida Sans","sans-serif";
+	margin-left:60px;
+	width:230px;
+	line-height:16px;
+	height:40px;
+	display:block;
+	padding-top:5px;
+	padding-left:10px;
+	text-align:left;
+	color:#666666;
+}
+.infolistimage span{
+	font-size:12px;
+	font-family:"Trebuchet MS","Lucida Console","Lucida Sans","sans-serif";
+	margin-left:10px;
+	line-height:13px;
+}
+.infolistimage b{
+	font-size:12px;
+	font-family:"Trebuchet MS","Lucida Console","Lucida Sans","sans-serif";
+	margin-left:0px;
+	line-height:15px;
+	color:#333333;
+}
+.logininput{
+	background-position:center top;
+	display:inline-block;
+	width:320px;
+	vertical-align:top;
+	text-align:left;
+	margin-left:60px;
+}
+#logininputbg{
+	height:130px;
+	background-repeat:no-repeat;
+	background-position:left top;
+}
+#logininputbg.mouse_out{
+	background-image:url(../img/logininputout.jpg);	
+	color:#ffffff;
+	border:0px #ffffff;
+}
+#logininputbg.mouse_over{
+	background-image:url(../img/logininputout.jpg);
+	color:#ffffff;
+	border:0px #ffffff;
+}
+.loginimage{
+	background-image:url(../img/cmslogin_08.jpg);
+	background-repeat:no-repeat;
+	width:250px;
+	height:40px;
+	background-position:left top;
+	display:block;
+	margin-top:20px;
+	margin-left:20px;
+	padding-bottom:20px;
+	border-bottom-width:1px;
+	border-bottom-style:solid;
+	border-bottom-color:#c1dcfa;
+}
+.usernametype{
+	font-family:"Trebuchet MS","Lucida Console","Lucida Sans","sans-serif";
+	font-size:12px;
+	margin-left:40px;
+	margin-top:20px;
+	display:inline-block;
+}
+#password{
+	margin-right:20px;
+	font-family:"Trebuchet MS","Lucida Console","Lucida Sans","sans-serif";
+	font-size:12px;
+	color: #2881bd;
+	font-weight:bold;
+	margin-left:20px;
+}
+.logindiv{
+	text-align:right;
+	margin-right:70px;
+}
+.usernameinput input{
+	background-repeat:no-repeat;
+	background-position:right top;
+	background-color:#FFF;
+	border:1px solid #FFF;
+	width:150px;
+	height:20px;
+	font-weight:bold;
+	margin-top:20px;
+	display:inline-block;
+}
+#loginbutton{
+	text-align:center;
+	margin-top:30px;
+	background-repeat:no-repeat;
+}
+#loginbutton.out{
+	background:url(../img/button2.gif) ;
+	background-position:right top;
+	width:80px;
+	height:26px;
+	text-align:center;
+	margin-top:30px;
+	display:block;
+	color:#fff;
+	vertical-align:bottom;
+	padding-top:5px;
+	border:0px;
+	cursor:pointer;
+}
+#loginbutton.over{
+	background:url(../img/button3.gif);
+	background-position: right top;
+	width:80px;
+	height:26px;
+	text-align:center;
+	margin-top:30px;
+	display:block;
+	color:#fff;
+	vertical-align: bottom;
+	padding-top:5px;
+	border:0px;
+	cursor:pointer;
+}
+#passwd{
+	background-repeat:no-repeat;
+	background-position:right top;
+	background-color:#dfedfd;
+	border:1px solid #c1dcfa;
+	width:150px;
+	height:20px;
+	font-weight:bold;
+	margin-top:20px;
+	display:inline-block;
+}
+.loginbutton{
+	background-image:url(../img/button.gif);
+	background-repeat:no-repeat;
+	background-position:center center;
+	width:100px;
+	height:32px;
+	text-align:center;
+	line-height:18px;
+	font-family:"Trebuchet MS","Lucida Console","Lucida Sans","sans-serif";
+	font-size:18px;
+	color: #FFFFFF;
+	font-weight:bold;
+	padding-top:8px;
+}
+.copyright{
+	background-image:url(../img/cmslogin_06.jpg);
+	background-repeat:no-repeat;
+	background-position:center top;
+	width:800px;
+	height:38px;
+	text-align:center;
+	display:block;
+	text-align:center;
+	line-height:14px;
+	font-size:12px;
+	font-family:"Trebuchet MS","Lucida Console","Lucida Sans","sans-serif";
+	padding-top:10px;
+}
+.copyright strong.none{color:#fff;}

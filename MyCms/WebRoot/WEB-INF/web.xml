@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd "
+    version="2.5">
+
+	<servlet>
+		<servlet-name>initData</servlet-name>
+		<servlet-class>util.InitServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<!--Servlet name-->
+
+	<servlet>
+		<servlet-name>MainCtrl</servlet-name>
+		<servlet-class>MainCtrl</servlet-class>
+	</servlet>
+	<servlet>
+	    <servlet-name>UploadCtrl</servlet-name>
+		<servlet-class>UploadCtrl</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>SimpleUploader</servlet-name>
+		<servlet-class>SimpleUploaderCtrl</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>PluginCtrl</servlet-name>
+		<servlet-class>PluginCtrl</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>RandomCodeCtrl</servlet-name>
+		<servlet-class>RandomCodeCtrl</servlet-class>
+	</servlet>
+
+	<!--Servlet mapping-->
+	<servlet-mapping>
+		<servlet-name>MainCtrl</servlet-name>
+		<url-pattern>/MainCtrl</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>initData</servlet-name>
+		<url-pattern>/initData</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UploadCtrl</servlet-name>
+		<url-pattern>/UploadCtrl</url-pattern>
+	</servlet-mapping>
+   <servlet-mapping>
+    <servlet-name>SimpleUploader</servlet-name>
+    <url-pattern>/SimpleUploader</url-pattern>
+  </servlet-mapping>
+  	<servlet-mapping>
+		<servlet-name>PluginCtrl</servlet-name>
+		<url-pattern>/PluginCtrl</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>RandomCodeCtrl</servlet-name>
+		<url-pattern>/RandomCodeCtrl</url-pattern>
+	</servlet-mapping>
+
+	<!--JDBC-->
+	<resource-ref>
+		<description>DB Connection</description>
+		<res-ref-name>jdbc/51javacms</res-ref-name>
+		<res-type>com.mchange.v2.c3p0.ComboPooledDataSource</res-type>
+		<res-auth>Container</res-auth>
+	</resource-ref>
+	
+  <jsp-config>
+	   <taglib>
+	    <taglib-uri>/51javacms</taglib-uri>
+	  	<taglib-location>/WEB-INF/51java.tld</taglib-location>
+	  </taglib>
+  </jsp-config> 
+  <listener>
+  	<listener-class>timetask.CMSListener</listener-class>
+  </listener>
+</web-app>

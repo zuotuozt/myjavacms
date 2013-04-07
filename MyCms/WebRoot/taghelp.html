@@ -1,0 +1,268 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>51javaCms的模板标记语言</title>
+<style type="text/css">
+html{
+	text-align: center;
+	margin:0 auto;
+	background-color:#FFF;
+	}
+/*HTML end*/
+
+/*body begin*/
+body {
+	padding-top:0px;
+	padding-bottom:0px;
+	text-align:left;
+	font-family:Arial,sans-serif;
+	margin: 0 auto;
+	font-size:12px;
+	background-color:#eeeeff;	
+}
+/*body end*/
+
+/* h1 h2 h3 h4 h5 h6 h7 h8 begin*/
+	h1,h2,h3,h4,h5,h6,h7,h8{
+	font-family:Arial,sans-serif;	
+	margin:0px;
+	padding:0px;
+	}
+/* h1 h2 h3 h4 h5 h6 h7 end*/
+
+/* image begin */
+ img{
+	border:none;
+	}
+/* image end */
+.STYLE1 {color: #FF0000}
+</style>
+</head>
+<body>
+<table width="100%">
+	<tbody>
+		<tr>
+			<td><font color="#660000">&nbsp;<b>◆51java内容管理系统模板标签代码参考</b></font></td>
+		</tr>
+		<tr>
+			<td><hr style="color: rgb(136, 136, 136);" size="1"></td>
+		</tr>
+		<tr>
+		   	<td>
+				<strong><font color="#990000">【模板文件说明】</font></strong><br/>
+				<strong>功能说明：</strong>模板文件为jsp文件；可以使用java和EL语言；每个文件头需要加下面2个语句：<br/>
+				<strong>适用范围：</strong><textarea rows="2" cols="50"><%@ page contentType="text/html;charset=utf-8" %>
+<%@ taglib uri="/51java" prefix="51java" %></textarea><br/><br/>
+			</td>
+		</tr>
+		<tr>
+		   	<td>
+				<strong><font color="#990000">【webroot 标签】</font></strong><br/>
+				<strong>功能说明：</strong>得到网站的外部url的根路径；例如：http://www.51javacms.com.<br/>
+				<strong>基本语法：</strong>&lt;51java:webroot/&gt;<br/><br/>
+			</td>
+		</tr>
+		<tr>
+		   	<td>
+				<strong><font color="#990000">【columnid 标签】</font></strong><br/>
+				<strong>功能说明：</strong>当前栏目id(适用所有模板)<br/>
+				<strong>基本语法：</strong>${columnid}<br/><br/>
+			</td>
+		</tr>
+				<tr> 
+			<td><font color="#990000"><strong>【文章属性 标签</strong>】（直接用EL语言调用）</font> </td>
+		</tr>
+		<tr> 
+			<td><strong>功能说明：</strong>获取指定的文档字段属性；隐含的page文章变量名：article。 </td>
+		</tr>
+		<tr> 
+			<td><strong>基本语法：</strong>${article.属性}<br/></td>
+		</tr>
+		<tr>
+			<td><strong>属性说明：</strong><br/>
+				[1] <strong>id</strong> 文章唯一标识符；${article.id}<br/>
+				[2] <strong>title</strong> 文章标题；${article.title}<br/>
+				[3] <strong>author</strong> 文章作者；${article.author}<br/>
+				[4] <strong>note</strong> 文章摘要；最多255个汉字。${article.note}<br/>
+				[5] <strong>creatime</strong> 文章创建时间；${article.creatime} 格式：yyyy-MM-dd HH:mm:ss ms（可以用&lt;51java:formatdate/&gt更换显示格式） <br/>
+				[6] <strong>url</strong> 文章url访问地址；${article.url}<br/>
+				[7] <strong>content</strong> 文章内容；${article.content}<br/>
+				[8] <strong>picture</strong> 文章缩略图的url；${article.picture}<br/>
+				[9] <strong>source</strong> 文章来源。${article.source}<br/>
+				[10] <strong>top</strong>文章栏目置顶（默认false）。${article.top}<br/>
+				[11] <strong>columnid</strong> 文章所属栏目id。${article.columnid}<br/>
+				[12] <strong>columnname</strong>文章所属栏目名称。${article.columnname}<br/>
+				[13] <strong>ordercnt</strong>文章栏目排序。${article.ordercnt}<br/>
+			<br/></td>
+		</tr>
+		<tr>
+			<td><font color="#990000"><strong>【formatdate标签</strong>】</font> </td>
+		</tr>
+		<tr> 
+		    <td><strong>功能说明：</strong>用于更改日期显示格式 </td>
+		</tr>
+		<tr> 
+			<td><strong>基本语法：</strong>&lt;51java:formatdate format="yy-MM-dd" datetime="${article.creatime}" /&gt;</td>
+		</tr>
+		<tr>
+			<td><strong>属性说明：</strong><br/>
+			    [1] <strong>format</strong> 日期显示格式；默认为"yyyy-MM-dd HH:mm"。<br/>
+			    [2] <strong>datetime</strong> 日期值；默认为当前日期。<br/><br/>
+		    </td>
+		</tr>
+		<tr>
+			<td><font color="#990000"><strong>【arlist标签</strong>】</font> </td>
+		</tr>
+		<tr> 
+		    <td><strong>功能说明：</strong>获取指定的文档列表； 在循环中隐含的当前循环次数变量：${currentcnt}</td>
+		</tr>
+		<tr> 
+			<td><strong>基本语法：</strong>&lt;51java:arlist pagesize="10" titlelen="30"&gt;<br/>    &lt;/51java:arlist&gt;</td>
+		</tr>
+		<tr>
+			<td><strong>属性说明：</strong><br/>
+			    [1] <strong>columnid</strong>='' 表示栏目ID，<span class="STYLE1">在列表模板和文档模板中一般不需要指定；默认为当前的栏目。</span><br/>
+			    [2] <strong>pageno</strong>='' 表示开始显示的页数，<span class="STYLE1">在列表模板中一般不需要指定；默认为当前的页数。</span>；<br/>
+			    [3] <strong>begin</strong>='3' 表示开始显示数，从1开始；<span class="STYLE1">和pageno只能有一个生效；如果有值，pageno参数将失效</span>；<br/>
+			    [4] <strong>pagesize</strong>='' 表示显示数据条数（默认为cms的"配置管理"中的"分页显示条数"）；<br/>
+			    [5] <strong>notelen</strong>='' 表示摘要长度，也就是文章简介；最多255个汉字。默认为总长度<br/>
+			    [6] <strong>titlelen</strong>='' 表示标题长度；默认为总长度<br/>
+			    [7] <strong>orderby</strong>='' 表示排序方式，默认是top desc,ordercnt desc,creatime desc排列。格式：orderby="creatime,title desc"<br/><br/>
+		    </td>
+		</tr>
+		<tr>
+			<td><font color="#990000"><strong>【分页标签</strong>】</font> </td>
+		</tr>
+		<tr> 
+		    <td><strong>功能说明：</strong>只适用于文档列表模板；帮助建立各种模式的分页子模板</td>
+		</tr>
+		<tr> 
+			<td><strong>基本语法：</strong>EL标记语言：${属性}；引用分页子模板方法：&lt;%@ include file="../system/page/page1.jsp"%&gt;</td>
+		</tr>
+		<tr>
+			<td><strong>属性说明：</strong><br/>
+			    [1] <strong>${path}</strong>：当前列表栏目文件路径<br/>
+			    [2] <strong>${pageno}</strong>：当前分页数<br/>
+			    [3] <strong>${totalcnt}</strong>：文章总数<br/>
+			    [4] <strong>${pagesize}</strong>：每页显示文章条数<br/>
+			    [5] <strong>${totalpage}</strong>：总页数<br/><br/>
+		    </td>
+		</tr>
+		<tr>
+			<td><font color="#990000"><strong>【上级栏目集合标签</strong>】</font> </td>
+		</tr>
+		<tr> 
+		    <td><strong>功能说明：</strong>只适用于文档列表和文章模板；</td>
+		</tr>
+		<tr> 
+			<td><strong>基本语法：</strong>EL标记语言：${parentcols}；常和foreach标签一起使用。</td>
+		</tr>
+		<tr>
+			<td><strong>栏目属性说明：</strong><br/>
+			    [1] <strong>id</strong>：栏目id<br/>
+			    [2] <strong>parentid</strong>：栏目的所属上级栏目id<br/>
+			    [3] <strong>name</strong>：栏目名称<br/>
+			    [4] <strong>link</strong>：栏目首页url访问地址<br/>
+		    </td>
+		</tr>
+		<tr>
+			<td><strong>“文章当前位置”例子说明：</strong><br/>&lt;51java:foreach var="col" items="${parentcols}"&gt;
+			&lt;51java:choose&gt;<br/>
+     &lt;51java:when test="${currentcnt==cnt}"&gt;${col.name}&lt;/51java:when&gt;<br/>
+     &lt;51java:otherwise&gt;&lt;a href="${col.link}" target="_blank"&gt;${col.name}&lt;/a&gt; &gt; &lt;/51java:otherwise&gt;<br/>
+    &lt;/51java:choose&gt;&lt;/51java:foreach&gt;<br/><br/>
+		    </td>
+		</tr>
+		<tr>
+			<td><font color="#990000"><strong>【set标签</strong>】</font> </td>
+		</tr>
+		<tr> 
+		    <td><strong>功能说明：</strong>用于保存数据 </td>
+		</tr>
+		<tr> 
+			<td><strong>基本语法：</strong>&lt;51java:set var="id" value="${article.id}" /&gt;</td>
+		</tr>
+		<tr>
+			<td><strong>属性说明：</strong><br/>
+			    [1] <strong>var</strong>="title"  定义变量名；java和EL语言都能调用；例如：${title}；属性必须存在。<br/>
+			    [2] <strong>value</strong>="好标题"  赋值变量；${title}的值是"好标题"；属性必须存在。<br/><br/>
+		    </td>
+		</tr>
+		<tr>
+			<td><font color="#990000"><strong>【if标签</strong>】</font> </td>
+		</tr>
+		<tr> 
+		    <td><strong>功能说明：</strong>if逻辑判断 </td>
+		</tr>
+		<tr> 
+			<td><strong>基本语法：</strong>&lt;51java:if test="${article.id==3}"&gt;xxxx&lt;/51java:if&gt;</td>
+		</tr>
+		<tr>
+			<td><strong>属性说明：</strong><br/>
+			    [1] <strong>test</strong>='' 布尔逻辑判断符true和false；默认：false。<br/><br/>
+		    </td>
+		</tr>
+		<tr>
+			<td><font color="#990000"><strong>【choose标签</strong>】</font> </td>
+		</tr>
+		<tr> 
+		    <td><strong>功能说明：</strong>choose逻辑判断（相当于if和else） </td>
+		</tr>
+		<tr> 
+			<td><strong>基本语法：</strong>&lt;51java:choose&gt;<br/>
+     &lt;51java:when test="${article.title=='fck'}"&gt;xxxx&lt;/51java:when&gt;<br/>
+     &lt;51java:otherwise&gt;yyyy&lt;/51java:otherwise&gt;<br/>
+    &lt;/51java:choose&gt;</td>
+		</tr>
+		<tr>
+			<td><strong>属性说明：</strong><br/>
+			    [1] <strong>test</strong>='' 布尔逻辑判断符true和false；默认：false。<br/><br/>
+		    </td>
+		</tr>
+		<tr>
+			<td><font color="#990000"><strong>【foreach标签</strong>】</font> </td>
+		</tr>
+		<tr> 
+		    <td><strong>功能说明：</strong>foreach循环;在循环中隐含变量:1当前循环次数${currentcnt};2循环总次数${cnt}</td>
+		</tr>
+		<tr> 
+			<td><strong>基本语法：</strong>&lt;51java:foreach var="col" items="${parentcols}"&gt;
+						${col.name}&lt;/51java:foreach&gt;</td>
+		</tr>
+		<tr>
+			<td><strong>属性说明：</strong><br/>
+			    [1] <strong>var</strong>定义循环变量名；java和EL语言都能调用；属性必须存在。<br/>
+			    [2] <strong>items</strong>赋值变量；是java的list类型；属性必须存在。<br/><br/>
+		    </td>
+		</tr>
+		<tr>
+			<td><font color="#990000"><strong>【loop循环标签</strong>】</font> </td>
+		</tr>
+		<tr> 
+		    <td><strong>功能说明：</strong>loop循环;在循环中隐含变量:当前循环次数${loopcnt};</td>
+		</tr>
+		<tr> 
+			<td><strong>基本语法：</strong>&lt;51java:loop cnt="6"&gt;hello world${loopcnt}!&lt;/51java:loop&gt;</td>
+		</tr>
+		<tr>
+			<td><strong>属性说明：</strong><br/>
+			    [1] <strong>cnt</strong>赋值变量；是循环次数；属性必须存在。<br/><br/>
+		    </td>
+		</tr>
+		<tr>
+		   	<td>
+				<strong><font color="#990000">【html meta seo搜索标签】</font></strong><br/>
+				<strong>功能说明：</strong>适用所有模板<br/>
+				<strong>基本语法：</strong>${seotitle};${seokeywords};${seodescription}<br/><br/>
+			</td>
+		</tr>
+		<tr> 
+			<td align="center" height="50px">Power by www.51javacms.com 版权所有</td>
+		</tr>																								
+	</tbody>
+</table>
+
+
+</body>
+</html>

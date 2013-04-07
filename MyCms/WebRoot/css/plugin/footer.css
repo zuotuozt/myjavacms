@@ -1,0 +1,18 @@
+.wp-pagenavi{text-align:left;float:left;}
+.wp-pagenavi span.pages{
+	color:#106899;
+	margin:2px;
+	padding:2px 8px 2px 4px;
+	border:1px solid #CCCCCC;
+}
+.wp-pagenavi a:hover{background-color:#FD7E00;}
+.wp-pagenavi a{
+	border:1px solid #CCCCCC;
+	color:#0066CC;
+	margin:2px;
+	padding:2px 8px 2px 4px;
+	text-decoration:none;
+}
+#footer{width:1000px;height:58px;margin:0 auto;background:url("../../img/plugin/footer.jpg") no-repeat;color:#000;}
+#footer .p1{float:left;padding:20px 0 0 20px;}
+#footer .p2{float:right;padding:12px 20px 0 0;}

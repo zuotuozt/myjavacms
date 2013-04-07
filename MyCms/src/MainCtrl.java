@@ -15,6 +15,8 @@ import util.PubFun;
 public class MainCtrl extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
+	/** 测试git */
+	private static final String ABC = "abc";
 
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
